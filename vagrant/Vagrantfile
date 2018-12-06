@@ -7,8 +7,9 @@ end
 
 Vagrant.configure("2") do |config|
 
-    config.vm.box     = "centos/7"
+    config.vm.box     = "generic/centos7"
     config.ssh.forward_agent = true
+    config.vbguest.auto_update = false
 
     config.vm.synced_folder "../ansible", "/ansible"
     config.vm.synced_folder "../share/www", "/var/www",
